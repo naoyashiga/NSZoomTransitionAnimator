@@ -1,5 +1,5 @@
 //
-//  ImageCollectionModalTransitionViewController.swift
+//  ImageCollectionViewController.swift
 //  NSZoomTransitionAnimator
 //
 //  Created by naoyashiga on 2015/06/25.
@@ -10,12 +10,12 @@ import UIKit
 
 let reuseIdentifier_ImageModalCell = "ImageModalCell"
 
-class ImageCollectionModalTransitionViewController: UICollectionViewController {
+class ImageCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.collectionView?.registerNib(UINib(nibName: "ImageCollectionModalTransitionCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier_ImageModalCell)
+        self.collectionView?.registerNib(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier_ImageModalCell)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,9 +33,11 @@ class ImageCollectionModalTransitionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier_ImageModalCell, forIndexPath: indexPath) as! ImageCollectionModalTransitionCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier_ImageModalCell, forIndexPath: indexPath) as! ImageCollectionViewCell
         
         cell.backgroundColor = UIColor.grayColor()
+        let img = UIImage(contentsOfFile: "catCafe")
+        cell.imageView = UIImageView(image: img)
     
     
         return cell

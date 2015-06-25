@@ -1,5 +1,5 @@
 //
-//  ImageCollectionModalTransitionCell.swift
+//  ImageCollectionViewCell.swift
 //  NSZoomTransitionAnimator
 //
 //  Created by naoyashiga on 2015/06/25.
@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ImageCollectionModalTransitionCell: UICollectionViewCell {
+class ImageCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var imageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

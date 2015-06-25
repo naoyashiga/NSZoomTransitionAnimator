@@ -13,9 +13,9 @@
 		9A127BF41B3C2C00001E2B23 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A127BF31B3C2C00001E2B23 /* Images.xcassets */; };
 		9A127BF71B3C2C00001E2B23 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A127BF51B3C2C00001E2B23 /* LaunchScreen.xib */; };
 		9A127C031B3C2C01001E2B23 /* NSZoomTransitionAnimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C021B3C2C01001E2B23 /* NSZoomTransitionAnimatorTests.swift */; };
-		9A127C0F1B3C2D66001E2B23 /* ImageCollectionModalTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C0D1B3C2D66001E2B23 /* ImageCollectionModalTransitionViewController.swift */; };
-		9A127C131B3C2FFB001E2B23 /* ImageCollectionModalTransitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C111B3C2FFB001E2B23 /* ImageCollectionModalTransitionCell.swift */; };
-		9A127C141B3C2FFB001E2B23 /* ImageCollectionModalTransitionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A127C121B3C2FFB001E2B23 /* ImageCollectionModalTransitionCell.xib */; };
+		9A127C181B3C358F001E2B23 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C171B3C358F001E2B23 /* ImageCollectionViewController.swift */; };
+		9A127C1B1B3C35A2001E2B23 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C191B3C35A2001E2B23 /* ImageCollectionViewCell.swift */; };
+		9A127C1C1B3C35A2001E2B23 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A127C1A1B3C35A2001E2B23 /* ImageCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +39,9 @@
 		9A127BFC1B3C2C01001E2B23 /* NSZoomTransitionAnimatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSZoomTransitionAnimatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A127C011B3C2C01001E2B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A127C021B3C2C01001E2B23 /* NSZoomTransitionAnimatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSZoomTransitionAnimatorTests.swift; sourceTree = "<group>"; };
-		9A127C0D1B3C2D66001E2B23 /* ImageCollectionModalTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionModalTransitionViewController.swift; sourceTree = "<group>"; };
-		9A127C111B3C2FFB001E2B23 /* ImageCollectionModalTransitionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionModalTransitionCell.swift; sourceTree = "<group>"; };
-		9A127C121B3C2FFB001E2B23 /* ImageCollectionModalTransitionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionModalTransitionCell.xib; sourceTree = "<group>"; };
+		9A127C171B3C358F001E2B23 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
+		9A127C191B3C35A2001E2B23 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		9A127C1A1B3C35A2001E2B23 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +122,9 @@
 		9A127C0C1B3C2D0C001E2B23 /* CollectionViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9A127C0D1B3C2D66001E2B23 /* ImageCollectionModalTransitionViewController.swift */,
-				9A127C111B3C2FFB001E2B23 /* ImageCollectionModalTransitionCell.swift */,
-				9A127C121B3C2FFB001E2B23 /* ImageCollectionModalTransitionCell.xib */,
+				9A127C171B3C358F001E2B23 /* ImageCollectionViewController.swift */,
+				9A127C191B3C35A2001E2B23 /* ImageCollectionViewCell.swift */,
+				9A127C1A1B3C35A2001E2B23 /* ImageCollectionViewCell.xib */,
 			);
 			name = CollectionViewController;
 			sourceTree = "<group>";
@@ -209,10 +209,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A127C141B3C2FFB001E2B23 /* ImageCollectionModalTransitionCell.xib in Resources */,
 				9A127BF21B3C2C00001E2B23 /* Main.storyboard in Resources */,
 				9A127BF71B3C2C00001E2B23 /* LaunchScreen.xib in Resources */,
 				9A127BF41B3C2C00001E2B23 /* Images.xcassets in Resources */,
+				9A127C1C1B3C35A2001E2B23 /* ImageCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,10 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A127C1B1B3C35A2001E2B23 /* ImageCollectionViewCell.swift in Sources */,
+				9A127C181B3C358F001E2B23 /* ImageCollectionViewController.swift in Sources */,
 				9A127BEF1B3C2C00001E2B23 /* ViewController.swift in Sources */,
 				9A127BED1B3C2C00001E2B23 /* AppDelegate.swift in Sources */,
-				9A127C131B3C2FFB001E2B23 /* ImageCollectionModalTransitionCell.swift in Sources */,
-				9A127C0F1B3C2D66001E2B23 /* ImageCollectionModalTransitionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
