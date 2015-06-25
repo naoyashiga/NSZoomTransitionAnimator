@@ -22,6 +22,14 @@ class ImageCollectionViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
     }
 
+    // MARK:
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "Detail" {
+            let vc = segue.destinationViewController as! DetailViewController
+            
+        }
+    }
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -41,6 +49,11 @@ class ImageCollectionViewController: UICollectionViewController {
     
     
         return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        performSegueWithIdentifier("Detail", sender: nil)
     }
 
     // MARK: UICollectionViewDelegate

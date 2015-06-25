@@ -16,6 +16,8 @@
 		9A127C181B3C358F001E2B23 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C171B3C358F001E2B23 /* ImageCollectionViewController.swift */; };
 		9A127C1B1B3C35A2001E2B23 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C191B3C35A2001E2B23 /* ImageCollectionViewCell.swift */; };
 		9A127C1C1B3C35A2001E2B23 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A127C1A1B3C35A2001E2B23 /* ImageCollectionViewCell.xib */; };
+		9A127C1F1B3C376A001E2B23 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C1D1B3C376A001E2B23 /* DetailViewController.swift */; };
+		9A127C201B3C376A001E2B23 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A127C1E1B3C376A001E2B23 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		9A127C171B3C358F001E2B23 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		9A127C191B3C35A2001E2B23 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9A127C1A1B3C35A2001E2B23 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		9A127C1D1B3C376A001E2B23 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9A127C1E1B3C376A001E2B23 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 				9A127BF31B3C2C00001E2B23 /* Images.xcassets */,
 				9A127BF51B3C2C00001E2B23 /* LaunchScreen.xib */,
 				9A127BEA1B3C2C00001E2B23 /* Supporting Files */,
+				9A127C1D1B3C376A001E2B23 /* DetailViewController.swift */,
+				9A127C1E1B3C376A001E2B23 /* DetailViewController.xib */,
 			);
 			path = NSZoomTransitionAnimator;
 			sourceTree = "<group>";
@@ -211,6 +217,7 @@
 			files = (
 				9A127BF21B3C2C00001E2B23 /* Main.storyboard in Resources */,
 				9A127BF71B3C2C00001E2B23 /* LaunchScreen.xib in Resources */,
+				9A127C201B3C376A001E2B23 /* DetailViewController.xib in Resources */,
 				9A127BF41B3C2C00001E2B23 /* Images.xcassets in Resources */,
 				9A127C1C1B3C35A2001E2B23 /* ImageCollectionViewCell.xib in Resources */,
 			);
@@ -232,6 +239,7 @@
 			files = (
 				9A127C1B1B3C35A2001E2B23 /* ImageCollectionViewCell.swift in Sources */,
 				9A127C181B3C358F001E2B23 /* ImageCollectionViewController.swift in Sources */,
+				9A127C1F1B3C376A001E2B23 /* DetailViewController.swift in Sources */,
 				9A127BEF1B3C2C00001E2B23 /* ViewController.swift in Sources */,
 				9A127BED1B3C2C00001E2B23 /* AppDelegate.swift in Sources */,
 			);

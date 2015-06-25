@@ -42,6 +42,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="nNg-Ia-chQ" kind="presentation" identifier="Detail" id="e1u-IG-ydK"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -54,6 +57,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYr-NS-Uh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="41" y="12"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="7Lg-tz-c9l">
+            <objects>
+                <viewController id="nNg-Ia-chQ" customClass="DetailViewController" customModule="NSZoomTransitionAnimator" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sOA-Lc-Wkr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792" y="12"/>
         </scene>
     </scenes>
 </document>
