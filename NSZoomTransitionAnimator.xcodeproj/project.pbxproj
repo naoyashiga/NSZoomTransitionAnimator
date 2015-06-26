@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9A127BED1B3C2C00001E2B23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127BEC1B3C2C00001E2B23 /* AppDelegate.swift */; };
-		9A127BEF1B3C2C00001E2B23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127BEE1B3C2C00001E2B23 /* ViewController.swift */; };
 		9A127BF21B3C2C00001E2B23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A127BF01B3C2C00001E2B23 /* Main.storyboard */; };
 		9A127BF41B3C2C00001E2B23 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A127BF31B3C2C00001E2B23 /* Images.xcassets */; };
 		9A127BF71B3C2C00001E2B23 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A127BF51B3C2C00001E2B23 /* LaunchScreen.xib */; };
@@ -18,6 +17,8 @@
 		9A127C1C1B3C35A2001E2B23 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A127C1A1B3C35A2001E2B23 /* ImageCollectionViewCell.xib */; };
 		9A127C1F1B3C376A001E2B23 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C1D1B3C376A001E2B23 /* DetailViewController.swift */; };
 		9A127C201B3C376A001E2B23 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A127C1E1B3C376A001E2B23 /* DetailViewController.xib */; };
+		9A127C221B3C3FDC001E2B23 /* ImageCollectionModalTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C211B3C3FDC001E2B23 /* ImageCollectionModalTransitionViewController.swift */; };
+		9A127C251B3C4054001E2B23 /* NSZoomTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C241B3C4054001E2B23 /* NSZoomTransitionAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +35,6 @@
 		9A127BE71B3C2C00001E2B23 /* NSZoomTransitionAnimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSZoomTransitionAnimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A127BEB1B3C2C00001E2B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A127BEC1B3C2C00001E2B23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9A127BEE1B3C2C00001E2B23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9A127BF11B3C2C00001E2B23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A127BF31B3C2C00001E2B23 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9A127BF61B3C2C00001E2B23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -46,6 +46,8 @@
 		9A127C1A1B3C35A2001E2B23 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		9A127C1D1B3C376A001E2B23 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9A127C1E1B3C376A001E2B23 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		9A127C211B3C3FDC001E2B23 /* ImageCollectionModalTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionModalTransitionViewController.swift; sourceTree = "<group>"; };
+		9A127C241B3C4054001E2B23 /* NSZoomTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSZoomTransitionAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,15 +89,14 @@
 		9A127BE91B3C2C00001E2B23 /* NSZoomTransitionAnimator */ = {
 			isa = PBXGroup;
 			children = (
-				9A127C0C1B3C2D0C001E2B23 /* CollectionViewController */,
 				9A127BEC1B3C2C00001E2B23 /* AppDelegate.swift */,
-				9A127BEE1B3C2C00001E2B23 /* ViewController.swift */,
 				9A127BF01B3C2C00001E2B23 /* Main.storyboard */,
 				9A127BF31B3C2C00001E2B23 /* Images.xcassets */,
 				9A127BF51B3C2C00001E2B23 /* LaunchScreen.xib */,
+				9A127C241B3C4054001E2B23 /* NSZoomTransitionAnimator.swift */,
+				9A127C0C1B3C2D0C001E2B23 /* CollectionViewController */,
+				9A127C231B3C4018001E2B23 /* Detail */,
 				9A127BEA1B3C2C00001E2B23 /* Supporting Files */,
-				9A127C1D1B3C376A001E2B23 /* DetailViewController.swift */,
-				9A127C1E1B3C376A001E2B23 /* DetailViewController.xib */,
 			);
 			path = NSZoomTransitionAnimator;
 			sourceTree = "<group>";
@@ -131,8 +132,18 @@
 				9A127C171B3C358F001E2B23 /* ImageCollectionViewController.swift */,
 				9A127C191B3C35A2001E2B23 /* ImageCollectionViewCell.swift */,
 				9A127C1A1B3C35A2001E2B23 /* ImageCollectionViewCell.xib */,
+				9A127C211B3C3FDC001E2B23 /* ImageCollectionModalTransitionViewController.swift */,
 			);
 			name = CollectionViewController;
+			sourceTree = "<group>";
+		};
+		9A127C231B3C4018001E2B23 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				9A127C1D1B3C376A001E2B23 /* DetailViewController.swift */,
+				9A127C1E1B3C376A001E2B23 /* DetailViewController.xib */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,10 +249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A127C1B1B3C35A2001E2B23 /* ImageCollectionViewCell.swift in Sources */,
+				9A127C251B3C4054001E2B23 /* NSZoomTransitionAnimator.swift in Sources */,
 				9A127C181B3C358F001E2B23 /* ImageCollectionViewController.swift in Sources */,
 				9A127C1F1B3C376A001E2B23 /* DetailViewController.swift in Sources */,
-				9A127BEF1B3C2C00001E2B23 /* ViewController.swift in Sources */,
 				9A127BED1B3C2C00001E2B23 /* AppDelegate.swift in Sources */,
+				9A127C221B3C3FDC001E2B23 /* ImageCollectionModalTransitionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
