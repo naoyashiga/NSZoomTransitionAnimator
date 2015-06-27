@@ -23,16 +23,6 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
     var goingForward: Bool = false
     var sourceVC = UIViewController()
     var destinationVC = UIViewController()
-//    var sourceTransition: NSZoomTransitionAnimating?
-//    var destinationTransition: NSZoomTransitionAnimating?
-    
-//    var sourceVC: NSZoomTransitionAnimating?
-//    var destinationVC: NSZoomTransitionAnimating?
-//    override init(sourceTransition: NSZoomTransitionAnimating, destinationTransition: NSZoomTransitionAnimating) {
-//        super.init()
-//        self.sourceTransition = sourceTransition
-//        self.destinationTransition = destinationTransition
-//    }
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         if goingForward {
@@ -53,6 +43,8 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
 //            transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
 //            return
 //        }
+        
+        toVC.view.frame = fromVC.view.frame
         
         containerView.addSubview(fromVC.view)
         containerView.addSubview(toVC.view)

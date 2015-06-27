@@ -24,7 +24,7 @@
                         <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="sC9-Vi-O0U"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Ny-K4-bAY">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Ny-K4-bAY">
                     <rect key="frame" x="0.0" y="100" width="600" height="400"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="400" id="CJu-KO-srs"/>
