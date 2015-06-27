@@ -13,6 +13,7 @@ class DetailViewController: UIViewController, NSZoomTransitionAnimating {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainImageView.image = UIImage(named: "catCafe")
     }
 
     override func didReceiveMemoryWarning() {

@@ -9,14 +9,9 @@
 import UIKit
 
 @objc public protocol NSZoomTransitionAnimating {
-//    var transitionSourceImageView: UIImageView { get }
-//    var transitionSourceBackgroundColor: UIColor { get }
-//    var transitionDestinationImageViewFrame: CGRect { get }
-    
     func transitionSourceImageView() -> UIImageView
     func transitionSourceBackgroundColor() -> UIColor
     func transitionDestinationImageViewFrame() -> CGRect
-//    var asVC: UIViewController { get set }
 }
 
 let kForwardAnimationDuration: NSTimeInterval = 0.3
@@ -26,6 +21,8 @@ let kBackwardCompleteAnimationDuration: NSTimeInterval = 0.3
 
 class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var goingForward: Bool = false
+    var sourceVC = UIViewController()
+    var destinationVC = UIViewController()
 //    var sourceTransition: NSZoomTransitionAnimating?
 //    var destinationTransition: NSZoomTransitionAnimating?
     
@@ -47,25 +44,25 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView()
-        let sourceVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
-        let destinationVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+        let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         
-        let doesNotConfirmProtocol = !sourceVC.conformsToProtocol(NSZoomTransitionAnimating) || !destinationVC.conformsToProtocol(NSZoomTransitionAnimating)
+//        let doesNotConfirmProtocol = !sourceVC.conformsToProtocol(NSZoomTransitionAnimating) || !destinationVC.conformsToProtocol(NSZoomTransitionAnimating)
+//        
+//        if doesNotConfirmProtocol {
+//            transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+//            return
+//        }
         
-        if doesNotConfirmProtocol {
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
-            return
-        }
+        containerView.addSubview(fromVC.view)
+        containerView.addSubview(toVC.view)
         
-        containerView.addSubview(sourceVC.view)
-        containerView.addSubview(destinationVC.view)
-        
-        let alphaView = UIView(frame: transitionContext.finalFrameForViewController(sourceVC))
+//        let alphaView = UIView(frame: transitionContext.finalFrameForViewController(fromVC))
         var sourceImageView = UIImageView()
         
         if let sourceVC = sourceVC as? NSZoomTransitionAnimating {
-            alphaView.backgroundColor = sourceVC.transitionSourceBackgroundColor()
-            containerView.addSubview(alphaView)
+//            alphaView.backgroundColor = sourceVC.transitionSourceBackgroundColor()
+//            containerView.addSubview(alphaView)
             
             sourceImageView = sourceVC.transitionSourceImageView()
             containerView.addSubview(sourceImageView)
@@ -74,15 +71,15 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
         if self.goingForward {
             UIView.animateWithDuration(kForwardAnimationDuration, delay: 0, options: .CurveEaseOut, animations: {
                 
-                if let destinationVC = destinationVC as? NSZoomTransitionAnimating {
+                if let destinationVC = self.destinationVC as? NSZoomTransitionAnimating {
                     sourceImageView.frame = destinationVC.transitionDestinationImageViewFrame()
-                    sourceImageView.transform = CGAffineTransformMakeScale(1.02, 1.02)
+//                    sourceImageView.transform = CGAffineTransformMakeScale(1.02, 1.02)
                 }
-                alphaView.alpha = 0.9
+//                alphaView.alpha = 0.9
                 
                 }, completion: {(finished: Bool) in
                     UIView.animateWithDuration(kForwardCompleteAnimationDuration, delay: 0, options: .CurveEaseOut, animations: {
-                        alphaView.alpha = 0
+//                        alphaView.alpha = 0
                         sourceImageView.transform = CGAffineTransformIdentity
                         
                         }, completion: {(finished: Bool) in
@@ -92,11 +89,11 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
             })
         } else {
             UIView.animateWithDuration(kBackwardAnimationDuration, delay: 0, options: .CurveEaseOut, animations: {
-                if let destinationVC = destinationVC as? NSZoomTransitionAnimating {
+                if let destinationVC = self.destinationVC as? NSZoomTransitionAnimating {
                     sourceImageView.frame = destinationVC.transitionDestinationImageViewFrame()
                 }
                 
-                alphaView.alpha = 0
+//                alphaView.alpha = 0
                 
                 }, completion: {(finished: Bool) in
                     UIView.animateWithDuration(kBackwardCompleteAnimationDuration, delay: 0, options: .CurveEaseOut, animations: {
@@ -108,5 +105,50 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
                     
             })
         }
+    }
+}
+
+extension NSZoomTransitionAnimator: UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
+    //MARK: UIViewControllerTransitioningDelegate
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if source.conformsToProtocol(NSZoomTransitionAnimating) && presented.conformsToProtocol(NSZoomTransitionAnimating) {
+            sourceVC = source
+            destinationVC = presented
+//            let animator = NSZoomTransitionAnimator()
+//            animator.goingForward = true
+            self.goingForward = true
+            return self
+        }
+        
+        return nil
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+//        return self
+        if dismissed.conformsToProtocol(NSZoomTransitionAnimating) && self.conformsToProtocol(NSZoomTransitionAnimating) {
+//            sourceVC = dismissed
+//            destinationVC = self
+//            let animator = NSZoomTransitionAnimator()
+//            animator.goingForward = false
+//            return animator
+            self.goingForward = false
+            return self
+        }
+//
+        return nil
+    }
+    
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if fromVC.conformsToProtocol(NSZoomTransitionAnimating) && toVC.conformsToProtocol(NSZoomTransitionAnimating) {
+            //            let animator = NSZoomTransitionAnimator()
+            //            animator.goingForward = true
+            self.goingForward = true
+            return self
+        }
+        
+        return nil
     }
 }

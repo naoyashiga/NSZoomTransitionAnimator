@@ -22,14 +22,7 @@ class ImageCollectionViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
     }
 
-    // MARK:
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "Detail" {
-            let vc = segue.destinationViewController as! DetailViewController
-            
-        }
-    }
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -44,8 +37,8 @@ class ImageCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier_ImageModalCell, forIndexPath: indexPath) as! ImageCollectionViewCell
         
         cell.backgroundColor = UIColor.grayColor()
-        let img = UIImage(contentsOfFile: "catCafe")
-        cell.imageView = UIImageView(image: img)
+        let img = UIImage(named: "catCafe")
+        cell.imageView.image = img
         
 //        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture:"))
 //        cell.imageView.addGestureRecognizer(tapGesture)
@@ -53,18 +46,15 @@ class ImageCollectionViewController: UICollectionViewController {
     
         return cell
     }
-    
-    func showDetail() {
-        
-    }
-    
+
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         println(indexPath.row)
-        performSegueWithIdentifier("Detail", sender: nil)
-//        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
-//        showDetail()
+        
+        if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
+            performSegueWithIdentifier("Detail", sender: cell)
+        }
     }
-
+    
     // MARK: UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: self.view.bounds.width, height: self.view.bounds.height / 2.5)

@@ -12,7 +12,7 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
                 <subviews>
-                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="catCafe" translatesAutoresizingMaskIntoConstraints="NO" id="nVl-3t-l4l">
+                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nVl-3t-l4l">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
                         <gestureRecognizers/>
                     </imageView>
@@ -31,7 +31,4 @@
             </connections>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="catCafe" width="360" height="480"/>
-    </resources>
 </document>

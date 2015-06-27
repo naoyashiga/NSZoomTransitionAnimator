@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="-707" y="12"/>
         </scene>
-        <!--Image Collection View Controller-->
+        <!--Image Collection Modal Transition View Controller-->
         <scene sceneID="KBv-vh-ug8">
             <objects>
-                <collectionViewController id="SOb-7O-Unf" customClass="ImageCollectionViewController" customModule="NSZoomTransitionAnimator" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="SOb-7O-Unf" customClass="ImageCollectionModalTransitionViewController" customModule="NSZoomTransitionAnimator" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="g5F-B3-RG3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

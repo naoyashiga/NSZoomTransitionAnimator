@@ -19,6 +19,7 @@
 		9A127C201B3C376A001E2B23 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A127C1E1B3C376A001E2B23 /* DetailViewController.xib */; };
 		9A127C221B3C3FDC001E2B23 /* ImageCollectionModalTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C211B3C3FDC001E2B23 /* ImageCollectionModalTransitionViewController.swift */; };
 		9A127C251B3C4054001E2B23 /* NSZoomTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C241B3C4054001E2B23 /* NSZoomTransitionAnimator.swift */; };
+		9A127C281B3E9289001E2B23 /* ModalTransitionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C271B3E9289001E2B23 /* ModalTransitionSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		9A127C1E1B3C376A001E2B23 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		9A127C211B3C3FDC001E2B23 /* ImageCollectionModalTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionModalTransitionViewController.swift; sourceTree = "<group>"; };
 		9A127C241B3C4054001E2B23 /* NSZoomTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSZoomTransitionAnimator.swift; sourceTree = "<group>"; };
+		9A127C271B3E9289001E2B23 /* ModalTransitionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalTransitionSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		9A127BE91B3C2C00001E2B23 /* NSZoomTransitionAnimator */ = {
 			isa = PBXGroup;
 			children = (
+				9A127C261B3E9250001E2B23 /* custom segues */,
 				9A127BEC1B3C2C00001E2B23 /* AppDelegate.swift */,
 				9A127BF01B3C2C00001E2B23 /* Main.storyboard */,
 				9A127BF31B3C2C00001E2B23 /* Images.xcassets */,
@@ -144,6 +147,14 @@
 				9A127C1E1B3C376A001E2B23 /* DetailViewController.xib */,
 			);
 			name = Detail;
+			sourceTree = "<group>";
+		};
+		9A127C261B3E9250001E2B23 /* custom segues */ = {
+			isa = PBXGroup;
+			children = (
+				9A127C271B3E9289001E2B23 /* ModalTransitionSegue.swift */,
+			);
+			name = "custom segues";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A127C281B3E9289001E2B23 /* ModalTransitionSegue.swift in Sources */,
 				9A127C1B1B3C35A2001E2B23 /* ImageCollectionViewCell.swift in Sources */,
 				9A127C251B3C4054001E2B23 /* NSZoomTransitionAnimator.swift in Sources */,
 				9A127C181B3C358F001E2B23 /* ImageCollectionViewController.swift in Sources */,

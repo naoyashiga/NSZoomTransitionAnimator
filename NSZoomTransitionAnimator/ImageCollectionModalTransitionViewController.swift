@@ -8,10 +8,15 @@
 
 import UIKit
 
-class ImageCollectionModalTransitionViewController: ImageCollectionViewController, UIViewControllerTransitioningDelegate, NSZoomTransitionAnimating {
+class ImageCollectionModalTransitionViewController: ImageCollectionViewController, NSZoomTransitionAnimating {
 
+    let transitionAnimator = NSZoomTransitionAnimator()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        if let navigationController = self.navigationController {
+//            navigationController.delegate = transitionAnimator
+//        }
         
     }
 
@@ -19,22 +24,22 @@ class ImageCollectionModalTransitionViewController: ImageCollectionViewControlle
         super.didReceiveMemoryWarning()
     }
     
-    override func showDetail() {
-        //subclass
-        let vc = DetailViewController(nibName: "DetailViewController", bundle: nil)
-        vc.transitioningDelegate = self
-        vc.modalPresentationStyle = UIModalPresentationStyle.FullScreen
-        vc.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
-        self.navigationController?.presentViewController(vc, animated: true, completion: nil)
-    }
-    
+    // MARK:
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "Detail" {
             let vc = segue.destinationViewController as! DetailViewController
-            vc.transitioningDelegate = self
+//            vc.mainImageView.image = UIImage(named: "catCafe")
+            vc.transitioningDelegate = transitionAnimator
         }
+//        if let indexPath = collectionView?.indexPathForCell(sender as! ImageCollectionViewCell) {
+//            if segue.identifier == "showDetail" {
+//                let vc = segue.destinationViewController as! DetailViewController
+//                vc.mainImageView.image = UIImage(named: "catCafe")
+//                vc.transitioningDelegate = transitionAnimator
+//            }
+//        }
     }
-    
     //MARK: NSZoomTransitionAnimating
     func transitionSourceImageView() -> UIImageView {
         let selectedIndexPath = collectionView?.indexPathsForSelectedItems().first as! NSIndexPath
@@ -63,25 +68,25 @@ class ImageCollectionModalTransitionViewController: ImageCollectionViewControlle
 
     
     //MARK: UIViewControllerTransitioningDelegate
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        if source.conformsToProtocol(NSZoomTransitionAnimating) && presented.conformsToProtocol(NSZoomTransitionAnimating) {
-            let animator = NSZoomTransitionAnimator()
-            animator.goingForward = true
-            return animator
-        }
-        
-        return nil
-    }
-    
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if dismissed.conformsToProtocol(NSZoomTransitionAnimating) && self.conformsToProtocol(NSZoomTransitionAnimating) {
-            let animator = NSZoomTransitionAnimator()
-            animator.goingForward = false
-            return animator
-        }
-        
-        return nil
-    }
+//    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        
+//        if source.conformsToProtocol(NSZoomTransitionAnimating) && presented.conformsToProtocol(NSZoomTransitionAnimating) {
+//            let animator = NSZoomTransitionAnimator()
+//            animator.goingForward = true
+//            return animator
+//        }
+//        
+//        return nil
+//    }
+//    
+//    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        if dismissed.conformsToProtocol(NSZoomTransitionAnimating) && self.conformsToProtocol(NSZoomTransitionAnimating) {
+//            let animator = NSZoomTransitionAnimator()
+//            animator.goingForward = false
+//            return animator
+//        }
+//        
+//        return nil
+//    }
     
 }
