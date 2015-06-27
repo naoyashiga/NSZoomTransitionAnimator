@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="NSZoomTransitionAnimator" customModuleProvider="target">
             <connections>
+                <outlet property="mainImageView" destination="5Ny-K4-bAY" id="16v-ay-Mdj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,11 +24,21 @@
                         <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="sC9-Vi-O0U"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Ny-K4-bAY">
+                    <rect key="frame" x="0.0" y="100" width="600" height="400"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="400" id="CJu-KO-srs"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="centerY" secondItem="5Ny-K4-bAY" secondAttribute="centerY" id="0gD-yy-vEB"/>
+                <constraint firstAttribute="centerX" secondItem="5Ny-K4-bAY" secondAttribute="centerX" id="M19-em-mSz"/>
+                <constraint firstItem="5Ny-K4-bAY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="N9E-MS-OIR"/>
                 <constraint firstAttribute="centerX" secondItem="Xfj-lL-h4v" secondAttribute="centerX" id="VYK-vY-PFm"/>
                 <constraint firstAttribute="bottom" secondItem="Xfj-lL-h4v" secondAttribute="bottom" constant="53" id="bLf-Tt-quu"/>
+                <constraint firstAttribute="trailing" secondItem="5Ny-K4-bAY" secondAttribute="trailing" id="dzI-IB-hMu"/>
             </constraints>
         </view>
     </objects>

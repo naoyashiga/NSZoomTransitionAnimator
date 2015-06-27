@@ -46,14 +46,23 @@ class ImageCollectionViewController: UICollectionViewController {
         cell.backgroundColor = UIColor.grayColor()
         let img = UIImage(contentsOfFile: "catCafe")
         cell.imageView = UIImageView(image: img)
+        
+//        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture:"))
+//        cell.imageView.addGestureRecognizer(tapGesture)
     
     
         return cell
     }
     
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func showDetail() {
         
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        println(indexPath.row)
         performSegueWithIdentifier("Detail", sender: nil)
+//        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+//        showDetail()
     }
 
     // MARK: UICollectionViewDelegate
@@ -64,5 +73,4 @@ class ImageCollectionViewController: UICollectionViewController {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
         return 0.0
     }
-    
 }
