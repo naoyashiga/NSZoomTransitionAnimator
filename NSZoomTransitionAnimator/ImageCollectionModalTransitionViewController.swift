@@ -10,7 +10,6 @@ import UIKit
 
 class ImageCollectionModalTransitionViewController: ImageCollectionViewController, NSZoomTransitionAnimating, UIViewControllerTransitioningDelegate {
 
-    let transitionAnimator = NSZoomTransitionAnimator()
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -23,7 +22,6 @@ class ImageCollectionModalTransitionViewController: ImageCollectionViewControlle
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Detail" {
             let vc = segue.destinationViewController as! DetailViewController
-//            vc.transitioningDelegate = transitionAnimator
             vc.transitioningDelegate = self
         }
     }
@@ -43,33 +41,16 @@ class ImageCollectionModalTransitionViewController: ImageCollectionViewControlle
         imageView.userInteractionEnabled = false
         imageView.frame = cell.imageView.convertRect(cell.imageView.frame, toView: collectionView?.superview)
         return imageView
-        
-//        let selectedIndexPath = collectionView?.indexPathsForSelectedItems().first as! NSIndexPath
-//        let cell = collectionView?.cellForItemAtIndexPath(selectedIndexPath) as! ImageCollectionViewCell
-//        let imageView = UIImageView(image: cell.imageView.image)
-//        
-//        imageView.contentMode = cell.imageView.contentMode
-//        imageView.clipsToBounds = true
-//        imageView.userInteractionEnabled = false
-//        imageView.frame = cell.imageView.convertRect(cell.imageView.frame, toView: collectionView?.superview)
-//        return imageView
     }
     
     func transitionSourceBackgroundColor() -> UIColor {
-//        return collectionView?.backgroundColor!
         return UIColor.blackColor()
     }
     
     func transitionDestinationImageViewFrame() -> CGRect {
-//        if let selectedIndexPath = collectionView?.indexPathsForSelectedItems().first as? NSIndexPath {
-//            self.selectedIndexPath = selectedIndexPath
-//        }
-//        let selectedIndexPath = collectionView?.indexPathsForSelectedItems().first as! NSIndexPath
         let cell = collectionView?.cellForItemAtIndexPath(selectedIndexPath) as! ImageCollectionViewCell
-        
         let cellFrameInSuperview = cell.imageView.convertRect(cell.imageView.frame, toView: collectionView?.superview)
         
-//        println(cellFrameInSuperview)
         return cellFrameInSuperview
     }
     

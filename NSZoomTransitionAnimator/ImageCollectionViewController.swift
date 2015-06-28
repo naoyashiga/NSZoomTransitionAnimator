@@ -21,7 +21,6 @@ class ImageCollectionViewController: UICollectionViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
     
     // MARK: UICollectionViewDataSource
 
@@ -40,16 +39,10 @@ class ImageCollectionViewController: UICollectionViewController {
         let img = UIImage(named: "catCafe")
         cell.imageView.image = img
         
-//        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture:"))
-//        cell.imageView.addGestureRecognizer(tapGesture)
-    
-    
         return cell
     }
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        println(indexPath.row)
-        
         if let cell = collectionView.cellForItemAtIndexPath(indexPath) {
             performSegueWithIdentifier("Detail", sender: cell)
         }
