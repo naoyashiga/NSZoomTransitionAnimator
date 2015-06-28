@@ -51,7 +51,9 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
         toVC.view.layoutIfNeeded()
         
         if let sourceViewController = sourceVC as? NSZoomTransitionAnimating {
-            sourceImageView = sourceViewController.transitionSourceImageView()
+//            sourceImageView = sourceViewController.transitionSourceImageView()
+            sourceImageView.image = sourceViewController.transitionSourceImageView().image
+            sourceImageView.frame = sourceViewController.transitionSourceImageView().frame
             containerView.addSubview(sourceImageView)
         }
         
@@ -60,7 +62,6 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
             destinationImageView.hidden = true
             
             destinationImageViewFrame = destinationViewController.transitionDestinationImageViewFrame()
-            
         }
         
         if self.goingForward {
@@ -72,7 +73,7 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
                         destinationImageView.hidden = false
                         sourceImageView.removeFromSuperview()
                     }
-                    transitionContext.completeTransition(finished)
+                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
             })
         } else {
             UIView.animateWithDuration(kBackwardAnimationDuration, delay: 0, options: .CurveEaseOut, animations: {
@@ -86,7 +87,8 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
                         println(sourceImageView.frame)
                         sourceImageView.removeFromSuperview()
                     }
-                    transitionContext.completeTransition(finished)
+                    
+                    transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
             })
         }
     }
