@@ -97,10 +97,12 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
                 
                 }, completion: {(finished: Bool) in
                     UIView.animateWithDuration(kBackwardCompleteAnimationDuration, delay: 0, options: .CurveEaseOut, animations: {
-                        sourceImageView.alpha = 0
+                        destinationImageView.hidden = false
                         
                         }, completion: {(finished: Bool) in
-                            transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+                            sourceImageView.alpha = 0
+                            transitionContext.completeTransition(finished)
+//                            transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
                     })
                     
             })
@@ -110,35 +112,38 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
 
 extension NSZoomTransitionAnimator: UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
     //MARK: UIViewControllerTransitioningDelegate
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        if source.conformsToProtocol(NSZoomTransitionAnimating) && presented.conformsToProtocol(NSZoomTransitionAnimating) {
-            sourceVC = source
-            destinationVC = presented
-//            let animator = NSZoomTransitionAnimator()
-//            animator.goingForward = true
-            self.goingForward = true
-            return self
-        }
-        
-        return nil
-    }
-    
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-//        return self
-        if dismissed.conformsToProtocol(NSZoomTransitionAnimating) && self.conformsToProtocol(NSZoomTransitionAnimating) {
-//            sourceVC = dismissed
-//            destinationVC = self
-//            let animator = NSZoomTransitionAnimator()
-//            animator.goingForward = false
-//            return animator
-            self.goingForward = false
-            return self
-        }
-//
-        return nil
-    }
+//    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        
+//        if source.conformsToProtocol(NSZoomTransitionAnimating) && presented.conformsToProtocol(NSZoomTransitionAnimating) {
+//            sourceVC = source
+//            destinationVC = presented
+////            let animator = NSZoomTransitionAnimator()
+////            animator.goingForward = true
+//            self.goingForward = true
+//            return self
+//        }
+//        
+//        return nil
+//    }
+//    
+//    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        
+////        if dismissed.conformsToProtocol(NSZoomTransitionAnimating) && self.conformsToProtocol(NSZoomTransitionAnimating) {
+//        
+//        destinationVC = DetailViewController()
+//        sourceVC = dismissed
+//        if sourceVC.conformsToProtocol(NSZoomTransitionAnimating) && destinationVC.conformsToProtocol(NSZoomTransitionAnimating) {
+////            sourceVC = dismissed
+////            destinationVC = self
+////            let animator = NSZoomTransitionAnimator()
+////            animator.goingForward = false
+////            return animator
+//            self.goingForward = false
+//            return self
+//        }
+////
+//        return nil
+//    }
     
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         

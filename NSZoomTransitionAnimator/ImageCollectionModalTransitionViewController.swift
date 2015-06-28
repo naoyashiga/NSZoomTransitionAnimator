@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageCollectionModalTransitionViewController: ImageCollectionViewController, NSZoomTransitionAnimating {
+class ImageCollectionModalTransitionViewController: ImageCollectionViewController, NSZoomTransitionAnimating, UIViewControllerTransitioningDelegate {
 
     let transitionAnimator = NSZoomTransitionAnimator()
     override func viewDidLoad() {
@@ -29,7 +29,8 @@ class ImageCollectionModalTransitionViewController: ImageCollectionViewControlle
         
         if segue.identifier == "Detail" {
             let vc = segue.destinationViewController as! DetailViewController
-            vc.transitioningDelegate = transitionAnimator
+//            vc.transitioningDelegate = transitionAnimator
+            vc.transitioningDelegate = self
         }
 //        if let indexPath = collectionView?.indexPathForCell(sender as! ImageCollectionViewCell) {
 //            if segue.identifier == "showDetail" {
@@ -39,10 +40,16 @@ class ImageCollectionModalTransitionViewController: ImageCollectionViewControlle
 //            }
 //        }
     }
+    
+    var selectedIndexPath = NSIndexPath()
     //MARK: NSZoomTransitionAnimating
     func transitionSourceImageView() -> UIImageView {
-        let selectedIndexPath = collectionView?.indexPathsForSelectedItems().first as! NSIndexPath
-        let cell = collectionView?.cellForItemAtIndexPath(selectedIndexPath) as! ImageCollectionViewCell
+        if let selectedIndexPath = collectionView?.indexPathsForSelectedItems().first as? NSIndexPath {
+            self.selectedIndexPath = selectedIndexPath
+        } else {
+            
+        }
+        let cell = collectionView?.cellForItemAtIndexPath(self.selectedIndexPath) as! ImageCollectionViewCell
         let imageView = UIImageView(image: cell.imageView.image)
         
         imageView.contentMode = cell.imageView.contentMode
@@ -50,6 +57,16 @@ class ImageCollectionModalTransitionViewController: ImageCollectionViewControlle
         imageView.userInteractionEnabled = false
         imageView.frame = cell.imageView.convertRect(cell.imageView.frame, toView: collectionView?.superview)
         return imageView
+        
+//        let selectedIndexPath = collectionView?.indexPathsForSelectedItems().first as! NSIndexPath
+//        let cell = collectionView?.cellForItemAtIndexPath(selectedIndexPath) as! ImageCollectionViewCell
+//        let imageView = UIImageView(image: cell.imageView.image)
+//        
+//        imageView.contentMode = cell.imageView.contentMode
+//        imageView.clipsToBounds = true
+//        imageView.userInteractionEnabled = false
+//        imageView.frame = cell.imageView.convertRect(cell.imageView.frame, toView: collectionView?.superview)
+//        return imageView
     }
     
     func transitionSourceBackgroundColor() -> UIColor {
@@ -58,34 +75,41 @@ class ImageCollectionModalTransitionViewController: ImageCollectionViewControlle
     }
     
     func transitionDestinationImageViewFrame() -> CGRect {
-        let selectedIndexPath = collectionView?.indexPathsForSelectedItems().first as! NSIndexPath
+        if let selectedIndexPath = collectionView?.indexPathsForSelectedItems().first as? NSIndexPath {
+            self.selectedIndexPath = selectedIndexPath
+        } else {
+            
+        }
+//        let selectedIndexPath = collectionView?.indexPathsForSelectedItems().first as! NSIndexPath
         let cell = collectionView?.cellForItemAtIndexPath(selectedIndexPath) as! ImageCollectionViewCell
         
         let cellFrameInSuperview = cell.imageView.convertRect(cell.imageView.frame, toView: collectionView?.superview)
         return cellFrameInSuperview
     }
-
     
     //MARK: UIViewControllerTransitioningDelegate
-//    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        
-//        if source.conformsToProtocol(NSZoomTransitionAnimating) && presented.conformsToProtocol(NSZoomTransitionAnimating) {
-//            let animator = NSZoomTransitionAnimator()
-//            animator.goingForward = true
-//            return animator
-//        }
-//        
-//        return nil
-//    }
-//    
-//    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        if dismissed.conformsToProtocol(NSZoomTransitionAnimating) && self.conformsToProtocol(NSZoomTransitionAnimating) {
-//            let animator = NSZoomTransitionAnimator()
-//            animator.goingForward = false
-//            return animator
-//        }
-//        
-//        return nil
-//    }
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if source.conformsToProtocol(NSZoomTransitionAnimating) && presented.conformsToProtocol(NSZoomTransitionAnimating) {
+            let animator = NSZoomTransitionAnimator()
+            animator.sourceVC = source
+            animator.destinationVC = presented
+            animator.goingForward = true
+            return animator
+        }
+        
+        return nil
+    }
     
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if dismissed.conformsToProtocol(NSZoomTransitionAnimating) && self.conformsToProtocol(NSZoomTransitionAnimating) {
+            let animator = NSZoomTransitionAnimator()
+            animator.sourceVC = dismissed
+            animator.destinationVC = self
+            animator.goingForward = false
+            return animator
+        }
+        return nil
+    }
 }
