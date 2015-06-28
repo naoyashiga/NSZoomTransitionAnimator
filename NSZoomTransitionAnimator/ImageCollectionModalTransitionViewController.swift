@@ -29,7 +29,6 @@ class ImageCollectionModalTransitionViewController: ImageCollectionViewControlle
         
         if segue.identifier == "Detail" {
             let vc = segue.destinationViewController as! DetailViewController
-//            vc.mainImageView.image = UIImage(named: "catCafe")
             vc.transitioningDelegate = transitionAnimator
         }
 //        if let indexPath = collectionView?.indexPathForCell(sender as! ImageCollectionViewCell) {

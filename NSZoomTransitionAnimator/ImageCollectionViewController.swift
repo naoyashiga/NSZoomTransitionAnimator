@@ -57,7 +57,8 @@ class ImageCollectionViewController: UICollectionViewController {
     
     // MARK: UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: self.view.bounds.width, height: self.view.bounds.height / 2.5)
+//        return CGSize(width: self.view.bounds.width, height: self.view.bounds.height / 2.5)
+        return CGSize(width: self.view.bounds.width / 2, height: self.view.bounds.width / 2)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {

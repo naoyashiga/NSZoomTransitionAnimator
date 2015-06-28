@@ -37,20 +37,21 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
         let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         
-//        let doesNotConfirmProtocol = !sourceVC.conformsToProtocol(NSZoomTransitionAnimating) || !destinationVC.conformsToProtocol(NSZoomTransitionAnimating)
-//        
-//        if doesNotConfirmProtocol {
-//            transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
-//            return
-//        }
         
         toVC.view.frame = fromVC.view.frame
+//        toVC.view.frame = transitionContext.finalFrameForViewController(toVC)
+//        toVC.updateViewConstraints()
         
         containerView.addSubview(fromVC.view)
         containerView.addSubview(toVC.view)
         
+        toVC.view.layoutIfNeeded()
+//        toVC.view.setNeedsLayout()
+        
 //        let alphaView = UIView(frame: transitionContext.finalFrameForViewController(fromVC))
         var sourceImageView = UIImageView()
+        var destinationImageView = UIImageView()
+        
         
         if let sourceVC = sourceVC as? NSZoomTransitionAnimating {
 //            alphaView.backgroundColor = sourceVC.transitionSourceBackgroundColor()
@@ -58,6 +59,11 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
             
             sourceImageView = sourceVC.transitionSourceImageView()
             containerView.addSubview(sourceImageView)
+        }
+        
+        if let destinationVC = self.destinationVC as? NSZoomTransitionAnimating {
+            destinationImageView = destinationVC.transitionSourceImageView()
+            destinationImageView.hidden = true
         }
         
         if self.goingForward {
@@ -72,11 +78,13 @@ class NSZoomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
                 }, completion: {(finished: Bool) in
                     UIView.animateWithDuration(kForwardCompleteAnimationDuration, delay: 0, options: .CurveEaseOut, animations: {
 //                        alphaView.alpha = 0
-                        sourceImageView.transform = CGAffineTransformIdentity
+//                        sourceImageView.transform = CGAffineTransformIdentity
+                        destinationImageView.hidden = false
                         
                         }, completion: {(finished: Bool) in
                             sourceImageView.alpha = 0
-                            transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+//                            transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+                            transitionContext.completeTransition(finished)
                     })
             })
         } else {
