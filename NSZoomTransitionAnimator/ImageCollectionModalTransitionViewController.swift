@@ -13,11 +13,6 @@ class ImageCollectionModalTransitionViewController: ImageCollectionViewControlle
     let transitionAnimator = NSZoomTransitionAnimator()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        if let navigationController = self.navigationController {
-//            navigationController.delegate = transitionAnimator
-//        }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,19 +21,11 @@ class ImageCollectionModalTransitionViewController: ImageCollectionViewControlle
     
     // MARK:
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         if segue.identifier == "Detail" {
             let vc = segue.destinationViewController as! DetailViewController
 //            vc.transitioningDelegate = transitionAnimator
             vc.transitioningDelegate = self
         }
-//        if let indexPath = collectionView?.indexPathForCell(sender as! ImageCollectionViewCell) {
-//            if segue.identifier == "showDetail" {
-//                let vc = segue.destinationViewController as! DetailViewController
-//                vc.mainImageView.image = UIImage(named: "catCafe")
-//                vc.transitioningDelegate = transitionAnimator
-//            }
-//        }
     }
     
     var selectedIndexPath = NSIndexPath()
@@ -46,9 +33,8 @@ class ImageCollectionModalTransitionViewController: ImageCollectionViewControlle
     func transitionSourceImageView() -> UIImageView {
         if let selectedIndexPath = collectionView?.indexPathsForSelectedItems().first as? NSIndexPath {
             self.selectedIndexPath = selectedIndexPath
-        } else {
-            
         }
+        
         let cell = collectionView?.cellForItemAtIndexPath(self.selectedIndexPath) as! ImageCollectionViewCell
         let imageView = UIImageView(image: cell.imageView.image)
         
@@ -75,15 +61,15 @@ class ImageCollectionModalTransitionViewController: ImageCollectionViewControlle
     }
     
     func transitionDestinationImageViewFrame() -> CGRect {
-        if let selectedIndexPath = collectionView?.indexPathsForSelectedItems().first as? NSIndexPath {
-            self.selectedIndexPath = selectedIndexPath
-        } else {
-            
-        }
+//        if let selectedIndexPath = collectionView?.indexPathsForSelectedItems().first as? NSIndexPath {
+//            self.selectedIndexPath = selectedIndexPath
+//        }
 //        let selectedIndexPath = collectionView?.indexPathsForSelectedItems().first as! NSIndexPath
         let cell = collectionView?.cellForItemAtIndexPath(selectedIndexPath) as! ImageCollectionViewCell
         
         let cellFrameInSuperview = cell.imageView.convertRect(cell.imageView.frame, toView: collectionView?.superview)
+        
+//        println(cellFrameInSuperview)
         return cellFrameInSuperview
     }
     
