@@ -19,6 +19,9 @@
 		9A127C201B3C376A001E2B23 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A127C1E1B3C376A001E2B23 /* DetailViewController.xib */; };
 		9A127C221B3C3FDC001E2B23 /* ImageCollectionModalTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C211B3C3FDC001E2B23 /* ImageCollectionModalTransitionViewController.swift */; };
 		9A127C251B3C4054001E2B23 /* NSZoomTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A127C241B3C4054001E2B23 /* NSZoomTransitionAnimator.swift */; };
+		9A8616E21B4179EF0044E6AE /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8616E11B4179EE0044E6AE /* HomeTableViewController.swift */; };
+		9A8616E51B417A050044E6AE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8616E31B417A050044E6AE /* HomeTableViewCell.swift */; };
+		9A8616E61B417A050044E6AE /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8616E41B417A050044E6AE /* HomeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		9A127C1E1B3C376A001E2B23 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		9A127C211B3C3FDC001E2B23 /* ImageCollectionModalTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionModalTransitionViewController.swift; sourceTree = "<group>"; };
 		9A127C241B3C4054001E2B23 /* NSZoomTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSZoomTransitionAnimator.swift; sourceTree = "<group>"; };
+		9A8616E11B4179EE0044E6AE /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		9A8616E31B417A050044E6AE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		9A8616E41B417A050044E6AE /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,7 @@
 				9A127BF31B3C2C00001E2B23 /* Images.xcassets */,
 				9A127BF51B3C2C00001E2B23 /* LaunchScreen.xib */,
 				9A127C241B3C4054001E2B23 /* NSZoomTransitionAnimator.swift */,
+				9A8616E71B417B4F0044E6AE /* Home */,
 				9A127C0C1B3C2D0C001E2B23 /* CollectionViewController */,
 				9A127C231B3C4018001E2B23 /* Detail */,
 				9A127BEA1B3C2C00001E2B23 /* Supporting Files */,
@@ -144,6 +151,16 @@
 				9A127C1E1B3C376A001E2B23 /* DetailViewController.xib */,
 			);
 			name = Detail;
+			sourceTree = "<group>";
+		};
+		9A8616E71B417B4F0044E6AE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9A8616E11B4179EE0044E6AE /* HomeTableViewController.swift */,
+				9A8616E31B417A050044E6AE /* HomeTableViewCell.swift */,
+				9A8616E41B417A050044E6AE /* HomeTableViewCell.xib */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +247,7 @@
 				9A127BF71B3C2C00001E2B23 /* LaunchScreen.xib in Resources */,
 				9A127C201B3C376A001E2B23 /* DetailViewController.xib in Resources */,
 				9A127BF41B3C2C00001E2B23 /* Images.xcassets in Resources */,
+				9A8616E61B417A050044E6AE /* HomeTableViewCell.xib in Resources */,
 				9A127C1C1B3C35A2001E2B23 /* ImageCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,7 +270,9 @@
 				9A127C251B3C4054001E2B23 /* NSZoomTransitionAnimator.swift in Sources */,
 				9A127C181B3C358F001E2B23 /* ImageCollectionViewController.swift in Sources */,
 				9A127C1F1B3C376A001E2B23 /* DetailViewController.swift in Sources */,
+				9A8616E21B4179EF0044E6AE /* HomeTableViewController.swift in Sources */,
 				9A127BED1B3C2C00001E2B23 /* AppDelegate.swift in Sources */,
+				9A8616E51B417A050044E6AE /* HomeTableViewCell.swift in Sources */,
 				9A127C221B3C3FDC001E2B23 /* ImageCollectionModalTransitionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +469,7 @@
 				9A127C081B3C2C01001E2B23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A127C091B3C2C01001E2B23 /* Build configuration list for PBXNativeTarget "NSZoomTransitionAnimatorTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +478,7 @@
 				9A127C0B1B3C2C01001E2B23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

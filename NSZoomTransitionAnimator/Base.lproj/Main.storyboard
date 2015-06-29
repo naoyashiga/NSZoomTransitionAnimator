@@ -13,12 +13,42 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="SOb-7O-Unf" kind="relationship" relationship="rootViewController" id="YgW-CX-CVM"/>
+                        <segue destination="Ecx-uS-cdd" kind="relationship" relationship="rootViewController" id="vj8-Ni-0yh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQY-VK-tdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-707" y="12"/>
+            <point key="canvasLocation" x="-1193" y="12"/>
+        </scene>
+        <!--Home Table View Controller-->
+        <scene sceneID="8Rh-Ro-KFE">
+            <objects>
+                <tableViewController id="Ecx-uS-cdd" customClass="HomeTableViewController" customModule="NSZoomTransitionAnimator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6GJ-Ry-H7y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeTableViewCell" id="G5o-fK-ANp" customClass="HomeTableViewCell" customModule="NSZoomTransitionAnimator" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G5o-fK-ANp" id="T8Q-TE-77w">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="SOb-7O-Unf" kind="show" identifier="CollectionModal" id="cH6-mz-NxO"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ecx-uS-cdd" id="Lwr-WW-8Dm"/>
+                            <outlet property="delegate" destination="Ecx-uS-cdd" id="Kl2-n1-UNz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="tBi-pP-jce"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JOW-7M-k7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-545" y="12"/>
         </scene>
         <!--Image Collection Modal Transition View Controller-->
         <scene sceneID="KBv-vh-ug8">
@@ -56,7 +86,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYr-NS-Uh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="41" y="12"/>
+            <point key="canvasLocation" x="135" y="12"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="7Lg-tz-c9l">
