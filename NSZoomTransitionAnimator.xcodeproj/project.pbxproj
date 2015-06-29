@@ -22,6 +22,8 @@
 		9A8616E21B4179EF0044E6AE /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8616E11B4179EE0044E6AE /* HomeTableViewController.swift */; };
 		9A8616E51B417A050044E6AE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8616E31B417A050044E6AE /* HomeTableViewCell.swift */; };
 		9A8616E61B417A050044E6AE /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8616E41B417A050044E6AE /* HomeTableViewCell.xib */; };
+		9A8616E91B4180F20044E6AE /* ImageCollectionPushTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8616E81B4180F20044E6AE /* ImageCollectionPushTransitionViewController.swift */; };
+		9A8616EB1B41856B0044E6AE /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8616EA1B41856B0044E6AE /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		9A8616E11B4179EE0044E6AE /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		9A8616E31B417A050044E6AE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		9A8616E41B417A050044E6AE /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		9A8616E81B4180F20044E6AE /* ImageCollectionPushTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionPushTransitionViewController.swift; sourceTree = "<group>"; };
+		9A8616EA1B41856B0044E6AE /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 				9A127BF31B3C2C00001E2B23 /* Images.xcassets */,
 				9A127BF51B3C2C00001E2B23 /* LaunchScreen.xib */,
 				9A127C241B3C4054001E2B23 /* NSZoomTransitionAnimator.swift */,
+				9A8616EA1B41856B0044E6AE /* NavigationController.swift */,
 				9A8616E71B417B4F0044E6AE /* Home */,
 				9A127C0C1B3C2D0C001E2B23 /* CollectionViewController */,
 				9A127C231B3C4018001E2B23 /* Detail */,
@@ -139,6 +144,7 @@
 				9A127C171B3C358F001E2B23 /* ImageCollectionViewController.swift */,
 				9A127C191B3C35A2001E2B23 /* ImageCollectionViewCell.swift */,
 				9A127C1A1B3C35A2001E2B23 /* ImageCollectionViewCell.xib */,
+				9A8616E81B4180F20044E6AE /* ImageCollectionPushTransitionViewController.swift */,
 				9A127C211B3C3FDC001E2B23 /* ImageCollectionModalTransitionViewController.swift */,
 			);
 			name = CollectionViewController;
@@ -273,6 +279,8 @@
 				9A8616E21B4179EF0044E6AE /* HomeTableViewController.swift in Sources */,
 				9A127BED1B3C2C00001E2B23 /* AppDelegate.swift in Sources */,
 				9A8616E51B417A050044E6AE /* HomeTableViewCell.swift in Sources */,
+				9A8616EB1B41856B0044E6AE /* NavigationController.swift in Sources */,
+				9A8616E91B4180F20044E6AE /* ImageCollectionPushTransitionViewController.swift in Sources */,
 				9A127C221B3C3FDC001E2B23 /* ImageCollectionModalTransitionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

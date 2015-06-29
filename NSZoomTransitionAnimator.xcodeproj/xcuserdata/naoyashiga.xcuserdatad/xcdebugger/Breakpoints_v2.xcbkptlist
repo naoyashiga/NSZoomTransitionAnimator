@@ -186,7 +186,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NSZoomTransitionAnimator/HomeTableViewController.swift"
-            timestampString = "457277099.832476"
+            timestampString = "457278783.411092"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NSZoomTransitionAnimator/HomeTableViewController.swift"
+            timestampString = "457278783.411092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -201,13 +217,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NSZoomTransitionAnimator/HomeTableViewController.swift"
-            timestampString = "457277101.397053"
+            filePath = "NSZoomTransitionAnimator/NavigationController.swift"
+            timestampString = "457279368.577532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "navigationController(_:animationControllerForOperation:fromViewController:toViewController:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

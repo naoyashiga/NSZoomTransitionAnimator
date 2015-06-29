@@ -7,7 +7,7 @@
         <!--Navigation Controller-->
         <scene sceneID="vbl-Yh-vlJ">
             <objects>
-                <navigationController id="cj0-vB-aUC" sceneMemberID="viewController">
+                <navigationController id="cj0-vB-aUC" customClass="NavigationController" customModule="NSZoomTransitionAnimator" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7X4-h1-MNH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -45,6 +45,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="tBi-pP-jce"/>
+                    <connections>
+                        <segue destination="RN3-ne-HHA" kind="show" identifier="CollectionPush" id="7SZ-bb-VcF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOW-7M-k7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,7 +89,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYr-NS-Uh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="12"/>
+            <point key="canvasLocation" x="183" y="-444"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="7Lg-tz-c9l">
@@ -94,7 +97,53 @@
                 <viewController id="nNg-Ia-chQ" customClass="DetailViewController" customModule="NSZoomTransitionAnimator" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOA-Lc-Wkr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="792" y="12"/>
+            <point key="canvasLocation" x="934" y="-438"/>
+        </scene>
+        <!--Image Collection Push Transition View Controller-->
+        <scene sceneID="gqe-ZL-ngi">
+            <objects>
+                <collectionViewController id="RN3-ne-HHA" customClass="ImageCollectionPushTransitionViewController" customModule="NSZoomTransitionAnimator" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="End-cI-K8o">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MCp-Eu-2m3">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageModalCell" id="DA4-bX-0nt" customClass="ImageCollectionViewCell" customModule="NSZoomTransitionAnimator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="MNS-CO-eQY" kind="show" identifier="Detail" id="bdJ-W0-iCS"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="RN3-ne-HHA" id="hPT-dI-vIS"/>
+                            <outlet property="delegate" destination="RN3-ne-HHA" id="0xz-vY-mNJ"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="Xqj-wD-yGd"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bkN-b0-2Yw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="183" y="328"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="eeU-fK-2yL">
+            <objects>
+                <viewController id="MNS-CO-eQY" customClass="DetailViewController" customModule="NSZoomTransitionAnimator" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EXN-Sd-bfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="934" y="334"/>
         </scene>
     </scenes>
 </document>

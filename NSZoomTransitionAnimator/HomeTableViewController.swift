@@ -70,6 +70,7 @@ class HomeTableViewController: UITableViewController {
         var vc = UIViewController()
         if indexPath.section == 0 {
             if indexPath.row == 0 {
+                performSegueWithIdentifier("CollectionPush", sender: nil)
             } else {
                 performSegueWithIdentifier("CollectionModal", sender: nil)
                 
